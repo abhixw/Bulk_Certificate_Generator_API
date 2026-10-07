@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: certificate-generator-api
+    ports:
+      - "8000:8000"
+    # We pass the env file so the container can connect to Neon DB
+    env_file:
+      - .env
+    # We mount the generated directory so PDFs survive container restarts
+    volumes:
+      - ./generated:/app/generated
+    restart: unless-stopped

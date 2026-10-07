@@ -13,6 +13,7 @@ pydantic-settings==2.9.1      # reads .env into Settings model
 
 # ── PDF Generation ─────────────────────────────────────────────────────────────
 reportlab==4.4.1
+pypdf==4.1.0                   # required to merge overlay with template
 
 # ── HTTP client (tests) ────────────────────────────────────────────────────────
 httpx==0.28.1
